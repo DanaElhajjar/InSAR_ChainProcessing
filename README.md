@@ -4,17 +4,17 @@ This repository is dedicated to the processing workflow for time series of SAR i
 
 # Code organisation
 
-├── environment.yml \\
-├── __init__.py \\
-├──pre_process \\
-│   ├── GenerateInterf.py \\
-│   ├── processing_chain_topo_phase_removal.xml \\
-│   └── utils.py \\
-└── post_process \\
-    ├── displacement_map.xml \\
-    ├── imagesutils.py \\
-    ├── script_displacement_map.py \\
-    ├── script_npy_to_hdr_img.py \\
-    ├── script_snaphu_export.py \\
-    ├── script_unwrap_terminal.py \\
-    └── snaphu_export.xml \\
+├── environment.yml <br>
+├── __init__.py <br>
+├──pre_process <br>
+│   ├── GenerateInterf.py <br>
+│   ├── processing_chain_topo_phase_removal.xml <br>
+│   └── utils.py <br>
+└── post_process <br>
+    ├── displacement_map.xml <br>
+    ├── imagesutils.py <br>
+    ├── script_displacement_map.py <br>
+    ├── script_npy_to_hdr_img.py <br>
+    ├── script_snaphu_export.py <br>
+    ├── script_unwrap_terminal.py <br>
+    └── snaphu_export.xml <br>
