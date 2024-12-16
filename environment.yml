@@ -1,0 +1,14 @@
+name: insar_processing_chain
+channels:
+  - conda-forge
+dependencies:
+  - python=3.7
+  - numpy
+  - os
+  - re
+  - sys
+  - tqdm
+  - struct
+  - subprocess
+  - pip:
+    - pyyaml
