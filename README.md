@@ -40,8 +40,7 @@ python GenerateInterf.py --pathInput <path_to_raw_SAR_images> \
 ## Post-processing 
 
 The post-processing phase consists of three main steps: converting phase estimates, performing phase unwrapping and displacement time series estimation.
-
-### Step 1: Convert Phase Estimates
+### Step 1: Convert Phase Estimates
 
 The first step is to convert the phase estimates stored in .npy files into a format compatible with the SNAP software. This is achieved using the script_npy_to_hdr_img.py script.
 
@@ -51,7 +50,6 @@ python script_npy_to_hdr_img.py --name_approach <name_of_the_approach_date> \
                                 --coherence_file  <path_to_the_estimated_coherences>\
                                 --output_path <path_to_save_output>
 ```
-
 ### Step 2: Phase Unwrapping
 
 After converting the phase estimates, phase unwrapping is performed. This is done in two sub-steps:
@@ -70,7 +68,6 @@ python script_unwrap_terminal.py --father_folder <pathto_unwrapped_interferogram
                                  --conf_file "snaphu.conf" \
                                  --comment_word "LOGFILE"
 ```
-
 ### Step 3: Displacement estimation
 
 The final step involves estimating the displacements from the unwrapped phase data. This is done using the script_displacement_map.py script, which generates a time series of displacement values.
@@ -92,8 +89,7 @@ A conda environment is provided in the file `environment.yml` To create and use 
 conda env create -f environment.yml
 conda activate insar_processing_chain
 ```
-
-### Authors
+## Authors
 
 * Dana El Hajjar, mail: dana.el-hajjar@univ-smb.fr, dana.el-hajjar@centralesupelec.fr
 
