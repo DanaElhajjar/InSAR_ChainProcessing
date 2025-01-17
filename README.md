@@ -50,7 +50,7 @@ python script_npy_to_hdr_img.py --name_approach <name_of_the_approach_date> \
                                 --coherence_file  <path_to_the_estimated_coherences>\
                                 --output_path <path_to_save_output>
 ```
-### Step 2: Phase Unwrapping
+### Step 2: Phase Unwrapping
 
 After converting the phase estimates, phase unwrapping is performed. This is done in two sub-steps:
 
@@ -68,7 +68,7 @@ python script_unwrap_terminal.py --father_folder <pathto_unwrapped_interferogram
                                  --conf_file "snaphu.conf" \
                                  --comment_word "LOGFILE"
 ```
-### Step 3: Displacement estimation
+### Step 3: Displacement Estimation
 
 The final step involves estimating the displacements from the unwrapped phase data. This is done using the script_displacement_map.py script, which generates a time series of displacement values.
 
