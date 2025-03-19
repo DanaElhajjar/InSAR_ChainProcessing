@@ -42,8 +42,7 @@ python GenerateInterf.py --pathInput <path_to_raw_SAR_images> \
 The post-processing phase consists of three main steps: converting phase estimates, performing phase unwrapping and displacement time series estimation.
 ### Step 1: Convert Phase and Coherence Estimates
 
-The first step is to convert the phase estimates stored in .npy files into a format compatible with the SNAP software. This is achieved using the 
-:
+The first step is to convert the phase estimates stored in .npy files into a format compatible with the SNAP software. This is achieved in two sub-steps:
 
 - Run script_npy_to_hdr_img.py to generate the hdr/img format
 - Run script_hdr_img_to_SAR.py to generate the SAR format
