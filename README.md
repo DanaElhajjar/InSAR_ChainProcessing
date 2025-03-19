@@ -1,6 +1,6 @@
 # InSAR Chain Processing
 
-This repository is dedicated to the processing workflow for time series of SAR images.  This workflow enables the conversionof a time series of SAR images into a time series of interferograms. It consists of two main stages:  Pre-processing and Post-processing.  The Pre-processing stage involves transforming SAR images into interferograms,  while thePost-processing stage focuses on converting the outputs of our algorithms (in .npy format) into SAR-compatible formats, phase unwrapping, and estimating the time series of displacements.
+This repository is dedicated to the processing workflow for time series of SAR images.  This workflow enables the conversion of a time series of SAR images into a time series of interferograms. It consists of two main stages:  Pre-processing and Post-processing.  The Pre-processing stage involves transforming SAR images into interferograms,  while the Post-processing stage focuses on converting the outputs of our algorithms (in .npy format) into SAR-compatible formats, phase unwrapping, and estimating the time series of displacements.
 
 # Code organisation
 
@@ -40,9 +40,13 @@ python GenerateInterf.py --pathInput <path_to_raw_SAR_images> \
 ## Post-processing 
 
 The post-processing phase consists of three main steps: converting phase estimates, performing phase unwrapping and displacement time series estimation.
-### Step 1: Convert Phase Estimates
+### Step 1: Convert Phase and Coherence Estimates
 
-The first step is to convert the phase estimates stored in .npy files into a format compatible with the SNAP software. This is achieved using the script_npy_to_hdr_img.py script.
+The first step is to convert the phase estimates stored in .npy files into a format compatible with the SNAP software. This is achieved using the 
+:
+
+- Run script_npy_to_hdr_img.py to generate the hdr/img format
+- Run script_hdr_img_to_SAR.py to generate the SAR format
 
 ```console
 python script_npy_to_hdr_img.py --name_approach <name_of_the_approach_date> \
@@ -50,6 +54,15 @@ python script_npy_to_hdr_img.py --name_approach <name_of_the_approach_date> \
                                 --coherence_file  <path_to_the_estimated_coherences>\
                                 --output_path <path_to_save_output>
 ```
+
+```console
+python conv_to_SAR.py --input_path "<path_to_initial_interferograms> \
+                      --path_hdr_img <path_to_the_obtained_hdr_img_files> \
+                      --output_path <path_to_save_output> \
+                      --n_images <number_of_images> \
+                      --name_approach <name_of_the_approach_date>
+```
+
 ### Step 2: Phase Unwrapping
 
 After converting the phase estimates, phase unwrapping is performed. This is done in two sub-steps:
